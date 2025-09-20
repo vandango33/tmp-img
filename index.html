@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Alpharetta Townhome - 2600 Milford Ln</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Playfair Display', 'Times New Roman', serif;
+            line-height: 1.7;
+            color: #2c2c2c;
+            background: #fafafa;
+        }
+
+        .exclusive-banner {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+            color: #d4af37;
+            text-align: center;
+            padding: 15px 0;
+            font-weight: 600;
+            letter-spacing: 2px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            border-bottom: 3px solid #d4af37;
+        }
+
+        .exclusive-banner .urgency {
+            color: #ffffff;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            letter-spacing: 1px;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(26,26,26,0.7)), url('https://raw.githubusercontent.com/vandango33/tmp-img/main/front_exterior.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 4.5rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+            letter-spacing: 2px;
+            color: #ffffff;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            color: #d4af37;
+            letter-spacing: 1px;
+        }
+
+        .hero-content .price {
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: #d4af37;
+            margin-bottom: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .key-features {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: inline;
+            margin: 0 1.5rem;
+        }
+
+        .feature-item:not(:last-child)::after {
+            content: " • ";
+            color: #d4af37;
+            margin-left: 1.5rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 4rem;
+            color: #1a1a1a;
+            position: relative;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 250px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 2rem 1rem 1rem;
+            font-weight: 600;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+
+        .detail-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .detail-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .detail-card ul {
+            list-style: none;
+        }
+
+        .detail-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .detail-card li:last-child {
+            border-bottom: none;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .highlight-box h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .neighborhood {
+            background: #f8f9fa;
+        }
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .amenity-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .amenity-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .contact-section {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+        }
+
+        .contact-info {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+        }
+
+        .contact-highlight {
+            background: #f39c12;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            display: inline-block;
+            margin: 1rem;
+            font-weight: 600;
+        }
+
+        .competitive-advantage {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .key-features {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Exclusive Off-Market Banner -->
+    <div class="exclusive-banner">
+        🔐 EXCLUSIVE OFF-MARKET OPPORTUNITY
+        <div class="urgency">⏰ Available Until October 20th, 2025 Only</div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Exclusive Alpharetta Community</h1>
+            <p class="subtitle">Private and Gated • Off-Market Listing</p>
+            <div class="price">Inquire for Pricing</div>
+            <div class="key-features">
+                3 Bedrooms • 4 Bathrooms • 2,400 sq ft • Premium Location
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Showcase -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Stunning Interior Spaces</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/vandango33/tmp-img/main/entry_door_interior.jpg" alt="Grand Entry Hall">
+                    <div class="gallery-label">Grand Entry Hall</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/vandango33/tmp-img/main/living_room1.jpg" alt="Spacious Living Area">
+                    <div class="gallery-label">Spacious Living Area</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/vandango33/tmp-img/main/kitchen_island_view.jpg" alt="Chef's Kitchen">
+                    <div class="gallery-label">Chef's Kitchen</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/vandango33/tmp-img/main/living_room_fireplace.jpg" alt="Cozy Fireplace Area">
+                    <div class="gallery-label">Cozy Fireplace Area</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/vandango33/tmp-img/main/primary_bedroom1.jpg" alt="Vaulted Master Suite">
+                    <div class="gallery-label">Vaulted Master Suite</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/vandango33/tmp-img/main/dining_room_round_table.jpg" alt="Elegant Dining Area">
+                    <div class="gallery-label">Elegant Dining Area</div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Rare Off-Market Opportunity</h3>
+                <p>This distinguished Lafayette floorplan residence features exquisite hardwood floors, sophisticated neutral palette, and architectural crown molding throughout. The gourmet kitchen showcases premium stainless steel appliances and integrated wine storage, seamlessly flowing into the sun-drenched conservatory. The master suite sanctuary boasts cathedral ceilings, spa-inspired bath, and custom walk-in closet. Available exclusively through private showing until October 20th, 2025.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Details -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Property Details</h2>
+            <div class="details-grid">
+                <div class="detail-card">
+                    <h3>Home Features</h3>
+                    <ul>
+                        <li><strong>Address:</strong> 2600 Milford Ln, Alpharetta, GA 30009</li>
+                        <li><strong>Type:</strong> Townhouse</li>
+                        <li><strong>Built:</strong> 2002</li>
+                        <li><strong>Living Area:</strong> 2,400 sq ft</li>
+                        <li><strong>Lot Size:</strong> 1,246 sq ft</li>
+                        <li><strong>Bedrooms:</strong> 3</li>
+                        <li><strong>Full Bathrooms:</strong> 3</li>
+                        <li><strong>Half Bathrooms:</strong> 1</li>
+                    </ul>
+                </div>
+                <div class="detail-card">
+                    <h3>Premium Features</h3>
+                    <ul>
+                        <li>Hardwood floors on main level</li>
+                        <li>Gas fireplace with electric start</li>
+                        <li>2 brand new AC units</li>
+                        <li>Stainless steel appliances</li>
+                        <li>Wine cooler included</li>
+                        <li>Finished basement</li>
+                        <li>2-car attached garage</li>
+                        <li>Private deck</li>
+                    </ul>
+                </div>
+                <div class="detail-card">
+                    <h3>Financial Details</h3>
+                    <ul>
+                        <li><strong>HOA Fee:</strong> $665/month</li>
+                        <li><strong>HOA Includes:</strong> Exterior paint, brick, roof, landscaping, large reserve fund</li>
+                        <li><strong>Parcel Number:</strong> 22514212660231</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="competitive-advantage">
+                <h3>🏆 Exclusive Market Positioning</h3>
+                <p><strong>Comparable properties listed at $745K - $775K</strong><br>
+                This distinguished residence offers exceptional value through private sale. Limited viewing period expires October 20th, 2025.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Amenities -->
+    <section class="section neighborhood">
+        <div class="container">
+            <h2 class="section-title">Exclusive Community Amenities</h2>
+            <div class="amenities-grid">
+                <div class="amenity-card">
+                    <img src="https://raw.githubusercontent.com/vandango33/tmp-img/main/community_pool.jpg" alt="Community Pool">
+                    <h4>Resort-Style Pool</h4>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://raw.githubusercontent.com/vandango33/tmp-img/main/tennis_court.jpg" alt="Tennis Courts">
+                    <h4>Tennis Courts</h4>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://raw.githubusercontent.com/vandango33/tmp-img/main/fitness_center.jpg" alt="Fitness Center">
+                    <h4>Fitness Facility</h4>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://raw.githubusercontent.com/vandango33/tmp-img/main/walking_trail_entrance.jpg" alt="Nature Trails">
+                    <h4>Private Nature Trails</h4>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://raw.githubusercontent.com/vandango33/tmp-img/main/gated_community_entrance.jpg" alt="Gated Entry">
+                    <h4>Secure Gated Entry</h4>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Prestigious Location</h3>
+                <p>Private gated access to downtown Alpharetta's premier district via exclusive nature trail. Enjoy curated cultural events, artisanal markets, and seasonal concerts. Minutes to Avalon's luxury shopping and dining. Internationally recognized community ranked among America's most desirable addresses by Time Magazine and Newsweek.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- More Photos -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Additional Views</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/vandango33/tmp-img/main/child_bedroom1.jpg" alt="Secondary Bedroom">
+                    <div class="gallery-label">Secondary Bedroom</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/vandango33/tmp-img/main/office_murphy_bed1.jpg" alt="Office/Guest Room">
+                    <div class="gallery-label">Office/Guest Room with Murphy Bed</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/vandango33/tmp-img/main/kitchen_cabinets.jpg" alt="Kitchen Details">
+                    <div class="gallery-label">Kitchen with Stained Cabinets</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/vandango33/tmp-img/main/deck_patio_seating.jpg" alt="Private Deck">
+                    <div class="gallery-label">Private Deck</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/vandango33/tmp-img/main/foyer_stairs.jpg" alt="Entry Foyer">
+                    <div class="gallery-label">Foyer with Hardwood Stairs</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/vandango33/tmp-img/main/community_stream_landscape.jpg" alt="Community Landscaping">
+                    <div class="gallery-label">Beautiful Community Grounds</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section">
+        <div class="container">
+            <h2 class="section-title" style="color: #d4af37;">Exclusive Private Viewing</h2>
+            <div class="contact-info">
+                <div class="contact-highlight">
+                    <strong>Private Seller</strong><br>
+                    📱 404.849.8677<br>
+                    Text or Call for Immediate Response
+                </div>
+            </div>
+            <p style="font-size: 1.2rem; margin-top: 2rem; color: #d4af37;">
+                <strong>⚠️ DEADLINE: October 20th, 2025</strong><br>
+                <span style="color: white;">Exclusive Off-Market Listing • Buyer's Agent Commission Available</span>
+            </p>
+            <p style="margin-top: 1.5rem; opacity: 0.8; font-style: italic;">
+                By Private Appointment Only • Qualified Buyers • Immediate Occupancy Available
+            </p>
+        </div>
+    </section>
+</body>
+</html>
