@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>2600 Milford Ln · Gated Alpharetta Townhome · Walk to Avalon & Downtown</title>
-  <meta name="description" content="Rare Lafayette floor plan in a quiet, gated community with direct trail access to Downtown Alpharetta & the Alpha Loop. 3 bed • 3.5 bath • 2,400 SF • finished terrace level • two brand-new AC units • pool, tennis, fitness, nature trail. HOA covers exterior."/>
+  <meta name="description" content="Rare Lafayette floor plan in a quiet, gated community with direct trail access to Downtown Alpharetta & the Alpha Loop. 3 bed • 3.5 bath • 2,400 SF • finished terrace level • two brand‑new AC units • pool, tennis, fitness, nature trail. HOA covers exterior."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
@@ -17,138 +17,160 @@
   <meta property="og:url" content="https://example.com/2600-milford-ln" />
 
   <style>
-    :root{
-      --bg:#0b1020;         /* Rich navy */
-      --bg-2:#0f172a;       /* Section bg */
-      --card:#0f1b3d;       /* Card bg */
-      --ink:#e5e7eb;        /* Body text */
-      --muted:#94a3b8;      /* Muted text */
-      --brand:#28f5ff;      /* Accent (plays nice with your brand palette) */
-      --brand-2:#60a5fa;    /* Secondary accent */
-      --gold:#f59e0b;       /* Subtle highlight */
-      --ok:#10b981;
-      --err:#ef4444;
-      --shadow:0 20px 45px rgba(2,6,23,.35);
-      --radius:18px;
-    }
+  /* ===== THEMEABLE COLOR SYSTEM (no AI Force colors) ===== */
+  :root { --radius:18px; --shadow:0 20px 45px rgba(2,6,23,.18); --hair:rgba(2,6,23,.10); }
+  /* Light (default) */
+  .theme-light{
+    --bg:#f7f7f5; --bg-2:#ffffff; --panel:rgba(255,255,255,.85);
+    --card:#ffffff; --card-border:rgba(2,6,23,.08);
+    --ink:#1f2937; --muted:#6b7280;
+    --accent:#2e7d6b; --accent-2:#9bd3c6; /* forest-teal */
+    --cta-1:#34d399; --cta-2:#10b981; --cta-ink:#052016;
+    --chip-bg:rgba(46,125,107,.12); --chip-border:rgba(46,125,107,.35); --chip-text:#1f3f37;
+    --input-bg:#f3f4f6; --button-bg:#f3f4f6; --button-border:var(--hair);
+    --accent-soft:rgba(46,125,107,.08);
+  }
+  /* Warm Neutral */
+  .theme-warm{
+    --bg:#faf7f2; --bg-2:#ffffff; --panel:rgba(255,255,255,.90);
+    --card:#ffffff; --card-border:rgba(2,6,23,.08);
+    --ink:#1f2937; --muted:#6b7280;
+    --accent:#b86b31; --accent-2:#f2c79b; /* terracotta */
+    --cta-1:#f59e0b; --cta-2:#fbbf24; --cta-ink:#3a1d0a;
+    --chip-bg:rgba(184,107,49,.12); --chip-border:rgba(184,107,49,.35); --chip-text:#5b3516;
+    --input-bg:#f7f4ef; --button-bg:#f6f3ee; --button-border:var(--hair);
+    --accent-soft:rgba(184,107,49,.08);
+  }
+  /* Slate (elegant dark) */
+  .theme-slate{
+    --bg:#0b1020; --bg-2:#0f172a; --panel:rgba(5,12,32,.8);
+    --card:#0f1b3d; --card-border:rgba(255,255,255,.08);
+    --ink:#e5e7eb; --muted:#94a3b8;
+    --accent:#7dd3fc; --accent-2:#38bdf8; /* cool blue */
+    --cta-1:#7dd3fc; --cta-2:#38bdf8; --cta-ink:#06141f;
+    --chip-bg:rgba(125,211,252,.12); --chip-border:rgba(125,211,252,.35); --chip-text:#c8f1ff;
+    --input-bg:#0b1b36; --button-bg:rgba(255,255,255,.08); --button-border:rgba(255,255,255,.2);
+    --accent-soft:rgba(125,211,252,.10);
+  }
 
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
-      color:var(--ink);
-      background:linear-gradient(180deg,var(--bg) 0%, #0b1226 60%, #0b1226 100%);
-      line-height:1.6;
-      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-    }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+    color:var(--ink);
+    background:linear-gradient(180deg,var(--bg) 0%, var(--bg-2) 60%, var(--bg-2) 100%);
+    line-height:1.6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  a{color:var(--accent);text-decoration:none}
+  a:hover{opacity:.9}
 
-    a{color:var(--brand);text-decoration:none}
-    a:hover{opacity:.9}
+  /* Header / Hero */
+  .site-header{position:sticky;top:0;z-index:30;background:var(--panel);backdrop-filter:blur(10px);border-bottom:1px solid var(--hair)}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+  .nav{display:flex;align-items:center;gap:18px;justify-content:space-between;height:64px}
+  .nav a{font-weight:500;color:var(--ink)}
+  .nav .cta{background:linear-gradient(90deg,var(--cta-1),var(--cta-2));color:var(--cta-ink);padding:10px 16px;border-radius:999px;font-weight:700;box-shadow:var(--shadow)}
 
-    /* Header / Hero */
-    .site-header{position:sticky;top:0;z-index:30;background:rgba(5,12,32,.8);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
-    .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
-    .nav{display:flex;align-items:center;gap:18px;justify-content:space-between;height:64px}
-    .nav a{font-weight:500;color:var(--ink)}
-    .nav .cta{background:var(--brand);color:#001b2a;padding:10px 16px;border-radius:999px;font-weight:700;box-shadow:var(--shadow)}
+  .hero{position:relative;isolation:isolate}
+  .hero-media{position:absolute;inset:0;z-index:-1;background:
+    linear-gradient(180deg,rgba(2,6,23,.55),rgba(2,6,23,.40)),
+    url('https://raw.githubusercontent.com/vandango33/tmp-img/main/front_exterior.jpg') center/cover no-repeat;}
+  .hero-inner{padding:96px 0 40px}
+  .eyebrow{letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;font-size:.82rem}
+  .title{font-family:"Playfair Display",serif;font-weight:600;font-size:clamp(30px,5vw,56px);line-height:1.15;margin:.35rem 0 1rem}
+  .sub{color:var(--muted);max-width:58ch}
 
-    .hero{position:relative;isolation:isolate}
-    .hero-media{position:absolute;inset:0;z-index:-1;background:
-      linear-gradient(180deg,rgba(2,6,23,.75),rgba(2,6,23,.75)),
-      url('https://raw.githubusercontent.com/vandango33/tmp-img/main/front_exterior.jpg') center/cover no-repeat;}
-    .hero-inner{padding:96px 0 40px}
-    .eyebrow{letter-spacing:.18em;text-transform:uppercase;color:var(--brand);font-weight:700;font-size:.82rem}
-    .title{font-family:"Playfair Display",serif;font-weight:600;font-size:clamp(30px,5vw,56px);line-height:1.15;margin:.35rem 0 1rem}
-    .sub{color:var(--muted);max-width:58ch}
+  .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .chip{background:var(--chip-bg);border:1px solid var(--chip-border);color:var(--chip-text);padding:8px 12px;border-radius:999px;font-weight:600}
+  .chip.alt{background:rgba(0,0,0,.04);border-color:var(--hair);color:var(--ink)}
 
-    .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-    .chip{background:rgba(40,245,255,.12);border:1px solid rgba(40,245,255,.35);color:#c8f9ff;padding:8px 12px;border-radius:999px;font-weight:600}
-    .chip.alt{background:rgba(96,165,250,.12);border-color:rgba(96,165,250,.35)}
+  /* Sticky mobile CTA */
+  .sticky-cta{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:40;background:linear-gradient(90deg,var(--cta-1),var(--cta-2));color:var(--cta-ink);border-radius:999px;box-shadow:var(--shadow);display:flex;gap:10px;align-items:center;padding:12px 18px}
+  .sticky-cta a{color:var(--cta-ink);font-weight:800}
 
-    /* Sticky mobile CTA */
-    .sticky-cta{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:40;background:linear-gradient(90deg,var(--brand),#7dd3fc);color:#06141f;border-radius:999px;box-shadow:var(--shadow);display:flex;gap:10px;align-items:center;padding:12px 18px}
-    .sticky-cta a{color:#06141f;font-weight:800}
+  /* Sections */
+  section{padding:64px 0}
+  .section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:24px}
+  h2{font-family:"Playfair Display",serif;font-size:clamp(24px,3.6vw,38px);font-weight:600;margin:0}
+  .kicker{color:var(--muted)}
 
-    /* Sections */
-    section{padding:64px 0}
-    .section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:24px}
-    h2{font-family:"Playfair Display",serif;font-size:clamp(24px,3.6vw,38px);font-weight:600;margin:0}
-    .kicker{color:var(--muted)}
+  /* Gallery */
+  .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+  .card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .img{position:relative;aspect-ratio:4/3;overflow:hidden}
+  .img>img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+  .card:hover .img>img{transform:scale(1.04)}
+  .label{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,.48);backdrop-filter:blur(6px);padding:6px 10px;border-radius:10px;font-size:.92rem;color:#fff}
 
-    /* Gallery */
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-    .card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
-    .img{position:relative;aspect-ratio:4/3;overflow:hidden}
-    .img>img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
-    .card:hover .img>img{transform:scale(1.04)}
-    .label{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,.48);backdrop-filter:blur(6px);padding:6px 10px;border-radius:10px;font-size:.92rem}
+  /* Lightbox */
+  .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:60}
+  .lightbox.open{display:flex}
+  .lightbox img{max-width:92vw;max-height:86vh;border-radius:16px;box-shadow:var(--shadow)}
+  .lightbox .close{position:absolute;top:18px;right:18px;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:999px;padding:10px 14px;cursor:pointer}
+  .lightbox .navbtn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:999px;padding:12px 14px;cursor:pointer}
+  .lightbox .prev{left:18px}.lightbox .next{right:18px}
 
-    /* Lightbox */
-    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:60}
-    .lightbox.open{display:flex}
-    .lightbox img{max-width:92vw;max-height:86vh;border-radius:16px;box-shadow:var(--shadow)}
-    .lightbox .close{position:absolute;top:18px;right:18px;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:999px;padding:10px 14px;cursor:pointer}
-    .lightbox .navbtn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:999px;padding:12px 14px;cursor:pointer}
-    .lightbox .prev{left:18px}.lightbox .next{right:18px}
+  /* Feature highlights */
+  .highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .hl{border-left:4px solid var(--accent);padding:18px;border-radius:12px;background:var(--accent-soft)}
+  .hl h3{margin:0 0 6px}
 
-    /* Feature highlights */
-    .highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .hl{border-left:4px solid var(--brand);padding:18px;border-radius:12px;background:rgba(40,245,255,.06)}
-    .hl h3{margin:0 0 6px}
+  /* Details */
+  .details{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+  .details .col{grid-column:span 6}
+  .list{margin:0;padding:0;list-style:none}
+  .list li{padding:10px 0;border-bottom:1px dashed var(--hair)}
+  .pill{display:inline-block;background:rgba(0,0,0,.03);padding:6px 10px;border-radius:999px;border:1px solid var(--hair);margin:4px 6px 0 0}
 
-    /* Details */
-    .details{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-    .details .col{grid-column:span 6}
-    .list{margin:0;padding:0;list-style:none}
-    .list li{padding:10px 0;border-bottom:1px dashed rgba(255,255,255,.12)}
-    .pill{display:inline-block;background:rgba(255,255,255,.06);padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.08);margin:4px 6px 0 0}
+  /* Amenities */
+  .amen{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .amen .card{display:flex;flex-direction:column}
+  .amen .img{aspect-ratio:16/10}
 
-    /* Amenities */
-    .amen{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-    .amen .card{display:flex;flex-direction:column}
-    .amen .img{aspect-ratio:16/10}
+  /* Location */
+  .mapwrap{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}
+  .map{border-radius:var(--radius);overflow:hidden;min-height:360px}
+  .badge-row{display:flex;flex-wrap:wrap;gap:8px}
 
-    /* Location */
-    .mapwrap{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}
-    .map{border-radius:var(--radius);overflow:hidden;min-height:360px}
-    .badge-row{display:flex;flex-wrap:wrap;gap:8px}
+  /* Calculator */
+  .calc{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .field{display:flex;flex-direction:column;gap:6px}
+  .field input{background:var(--input-bg);border:1px solid var(--button-border);color:var(--ink);padding:12px 12px;border-radius:10px}
+  .muted{color:var(--muted)}
+  .result{font-size:1.8rem;font-weight:800}
 
-    /* Calculator */
-    .calc{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .field{display:flex;flex-direction:column;gap:6px}
-    .field input{background:#0b1b36;border:1px solid rgba(255,255,255,.1);color:var(--ink);padding:12px 12px;border-radius:10px}
-    .muted{color:var(--muted)}
-    .result{font-size:1.8rem;font-weight:800}
+  /* Contact */
+  .cta-panel{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:center}
+  .cta-box{background:linear-gradient(135deg,var(--cta-1),var(--cta-2));color:var(--cta-ink);border-radius:var(--radius);padding:22px 20px}
+  .cta-box a{color:var(--cta-ink);font-weight:800}
+  .callout{background:linear-gradient(135deg,var(--cta-1),var(--cta-2));border:0;color:var(--cta-ink);border-radius:12px;padding:12px 18px;font-weight:800}
+  .print{background:var(--button-bg);border:1px solid var(--button-border);color:var(--ink);border-radius:12px;padding:12px 18px;font-weight:700}
 
-    /* Contact */
-    .cta-panel{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:center}
-    .cta-box{background:linear-gradient(135deg,var(--brand),#7dd3fc);color:#06222e;border-radius:var(--radius);padding:22px 20px}
-    .cta-box a{color:#06222e;font-weight:800}
-    .callout{background:linear-gradient(135deg,#10b981,#34d399);border:0;color:#052016;border-radius:12px;padding:12px 18px;font-weight:800}
-    .print{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:var(--ink);border-radius:12px;padding:12px 18px;font-weight:700}
+  footer{padding:48px 0;color:var(--muted);text-align:center}
 
-    footer{padding:48px 0;color:var(--muted);text-align:center}
+  /* Theme switcher inline style */
+  #themeSelect{appearance:none;background:var(--button-bg);border:1px solid var(--button-border);border-radius:999px;padding:8px 12px;font-weight:600;color:var(--ink)}
 
-    /* Responsive */
-    @media (max-width:1024px){
-      .highlights{grid-template-columns:1fr 1fr}
-      .amen{grid-template-columns:1fr 1fr}
-      .mapwrap{grid-template-columns:1fr}
-      .calc{grid-template-columns:1fr}
-      .cta-panel{grid-template-columns:1fr}
-      .details .col{grid-column:span 12}
-    }
-    @media (max-width:680px){
-      .facts{gap:8px}
-      .chip{padding:6px 10px}
-    }
-  </style>
+  /* Responsive */
+  @media (max-width:1024px){
+    .highlights{grid-template-columns:1fr 1fr}
+    .amen{grid-template-columns:1fr 1fr}
+    .mapwrap{grid-template-columns:1fr}
+    .calc{grid-template-columns:1fr}
+    .cta-panel{grid-template-columns:1fr}
+    .details .col{grid-column:span 12}
+  }
+  @media (max-width:680px){
+    .facts{gap:8px}
+    .chip{padding:6px 10px}
+  }
+</style>
 </head>
-<body>
+<body class="theme-light">
   <header class="site-header">
     <div class="wrap nav">
       <div style="display:flex;align-items:center;gap:12px">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-10.5Z" stroke="#28f5ff" stroke-width="1.4"/></svg>
+        <svg style="color:var(--accent)" width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-10.5Z" stroke="currentColor" stroke-width="1.4"/></svg>
         <strong>2600 Milford Ln · Alpharetta</strong>
       </div>
       <nav style="display:flex;gap:16px;align-items:center">
@@ -156,8 +178,12 @@
         <a href="#details">Details</a>
         <a href="#amenities">Amenities</a>
         <a href="#location">Location</a>
-        <a href="#calculator">Payment</a>
-        <a href="#contact" class="cta">Text/Call&nbsp;(404)&nbsp;849-8677</a>
+        $1<select id="themeSelect" aria-label="Color theme">
+  <option value="theme-light">Light</option>
+  <option value="theme-warm">Warm</option>
+  <option value="theme-slate">Slate</option>
+</select>
+<a href="#contact" class="cta">Text/Call (404) 849‑8677</a>
       </nav>
     </div>
   </header>
@@ -167,7 +193,7 @@
     <div class="wrap hero-inner">
       <div class="eyebrow">Private Showing · Gated Community</div>
       <h1 class="title">Sophisticated Townhome steps from Downtown Alpharetta & Avalon</h1>
-      <p class="sub">Rare Lafayette floor plan with sunlit keeping room, chef’s kitchen with stainless appliances & wine cooler, vaulted primary suite with spa bath & custom closet, finished terrace level, and two brand-new AC units. Direct private gate to the Alpha Loop & nature trail.</p>
+      <p class="sub">Rare Lafayette floor plan with sunlit keeping room, chef’s kitchen with stainless appliances & wine cooler, vaulted primary suite with spa bath & custom closet, finished terrace level, and two brand‑new AC units. Direct private gate to the Alpha Loop & nature trail.</p>
       <div class="facts">
         <span class="chip">3 Bed</span>
         <span class="chip">3.5 Bath</span>
@@ -235,7 +261,7 @@
   <section class="wrap">
     <div class="highlights">
       <div class="hl card">
-        <h3>Turn-Key & Low-Maintenance</h3>
+        <h3>Turn‑Key & Low‑Maintenance</h3>
         <p>HOA covers exterior paint, brick, roof & landscaping plus a healthy reserve fund—so weekends are yours.</p>
       </div>
       <div class="hl card">
@@ -243,8 +269,8 @@
         <p>Direct private gate to the nature trail & Alpha Loop. Stroll to Downtown Alpharetta or Avalon for dining & shopping.</p>
       </div>
       <div class="hl card">
-        <h3>Major System Peace-of-Mind</h3>
-        <p>Cooling is handled by <strong>two brand-new AC units</strong>. Cozy gas fireplace with electric start anchors the living area.</p>
+        <h3>Major System Peace‑of‑Mind</h3>
+        <p>Cooling is handled by <strong>two brand‑new AC units</strong>. Cozy gas fireplace with electric start anchors the living area.</p>
       </div>
     </div>
   </section>
@@ -253,7 +279,7 @@
   <section id="details" class="wrap">
     <div class="section-head">
       <h2>Property Details</h2>
-      <div class="kicker">MLS-ready fact set</div>
+      <div class="kicker">MLS‑ready fact set</div>
     </div>
     <div class="details">
       <div class="col card" style="padding:18px 18px 6px">
@@ -266,7 +292,7 @@
           <li><strong>Beds/Baths:</strong> 3 beds · 3 full · 1 half</li>
           <li><strong>Year built:</strong> 2002</li>
           <li><strong>Basement:</strong> Finished terrace level (ideal office/guest/media)</li>
-          <li><strong>Parking:</strong> Attached garage (2 spaces) + on-street</li>
+          <li><strong>Parking:</strong> Attached garage (2 spaces) + on‑street</li>
         </ul>
         <div style="margin-top:10px">
           <span class="pill">Hardwood on main</span>
@@ -279,7 +305,7 @@
         <h3>Systems & Finishes</h3>
         <ul class="list">
           <li><strong>Heating:</strong> Forced air (gas)</li>
-          <li><strong>Cooling:</strong> Central — <em>two brand-new AC units</em></li>
+          <li><strong>Cooling:</strong> Central — <em>two brand‑new AC units</em></li>
           <li><strong>Fireplace:</strong> Gas with electric start</li>
           <li><strong>Flooring:</strong> Hardwood · Tile · Carpet</li>
           <li><strong>Roof:</strong> Composition</li>
@@ -309,10 +335,10 @@
   <section id="amenities" class="wrap">
     <div class="section-head">
       <h2>Community Amenities</h2>
-      <div class="kicker">Resort-style perks a short stroll away</div>
+      <div class="kicker">Resort‑style perks a short stroll away</div>
     </div>
     <div class="amen">
-      <figure class="card"><div class="img"><img data-large src="https://raw.githubusercontent.com/vandango33/tmp-img/main/community_pool.jpg" alt="Community pool" loading="lazy"><figcaption class="label">Resort-Style Pool</figcaption></div></figure>
+      <figure class="card"><div class="img"><img data-large src="https://raw.githubusercontent.com/vandango33/tmp-img/main/community_pool.jpg" alt="Community pool" loading="lazy"><figcaption class="label">Resort‑Style Pool</figcaption></div></figure>
       <figure class="card"><div class="img"><img data-large src="https://raw.githubusercontent.com/vandango33/tmp-img/main/tennis_court.jpg" alt="Tennis courts" loading="lazy"><figcaption class="label">Tennis Courts</figcaption></div></figure>
       <figure class="card"><div class="img"><img data-large src="https://raw.githubusercontent.com/vandango33/tmp-img/main/fitness_center.jpg" alt="Fitness facility" loading="lazy"><figcaption class="label">Fitness Facility</figcaption></div></figure>
       <figure class="card"><div class="img"><img data-large src="https://raw.githubusercontent.com/vandango33/tmp-img/main/walking_trail_entrance.jpg" alt="Nature trail entrance" loading="lazy"><figcaption class="label">Nature Trail / Alpha Loop Gate</figcaption></div></figure>
@@ -389,9 +415,9 @@
     <div class="cta-panel">
       <div class="cta-box">
         <h3 style="margin:0 0 6px">Text or Call for fastest response</h3>
-        <p style="margin:0 0 10px">We’ll coordinate a private tour and answer questions about comps, HOA, and incentives (e.g., 2-1 buydown or prepaid HOA).</p>
+        <p style="margin:0 0 10px">We’ll coordinate a private tour and answer questions about comps, HOA, and incentives (e.g., 2‑1 buydown or prepaid HOA).</p>
         <p style="display:flex;gap:12px;flex-wrap:wrap;margin:0">
-          <a class="pill" href="sms:+14048498677?&body=Hi%20—%20I%27d%20like%20to%20tour%202600%20Milford%20Ln">Text (404)&nbsp;849-8677</a>
+          <a class="pill" href="sms:+14048498677?&body=Hi%20—%20I%27d%20like%20to%20tour%202600%20Milford%20Ln">Text (404) 849‑8677</a>
           <a class="pill" href="tel:+14048498677">Call Now</a>
           <a class="pill" href="mailto:mark@aiforcetraining.com?subject=2600%20Milford%20Ln%20Inquiry&body=Hi%2C%20I%27d%20like%20to%20request%20a%20showing%20for%202600%20Milford%20Ln.%20My%20name%20is%20___%20and%20my%20availability%20is%20___">Email</a>
         </p>
@@ -497,6 +523,17 @@
     }
     document.getElementById('calcBtn').addEventListener('click', calc);
     calc();
-  </script>
+  <\/script>
+<script>
+  // Theme switcher
+  (function(){
+    const THEMES=['theme-light','theme-warm','theme-slate'];
+    const el=document.getElementById('themeSelect');
+    function apply(t){ document.body.classList.remove(...THEMES); document.body.classList.add(t); localStorage.setItem('theme',t); }
+    const saved = localStorage.getItem('theme') || 'theme-light';
+    apply(saved);
+    if(el){ el.value=saved; el.addEventListener('change', e=> apply(e.target.value)); }
+  })();
+</script>
 </body>
 </html>
